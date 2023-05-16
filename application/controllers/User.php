@@ -12,8 +12,11 @@ class User extends CI_Controller {
 	{
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
-		
 		$this->load->view('user/index');
+		$this->load->view('layouts/header');
+		$this->load->view('layouts/topbar');
+		$this->load->view('layouts/sidebar');
+		$this->load->view('layouts/footer');
 		
 	}
 
