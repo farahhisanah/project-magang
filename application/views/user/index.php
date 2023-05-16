@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
 				<img src="<?= base_url('assets/img/logo.png'); ?>" alt="" style="height: 30px;">
                 </div>
-                <div class="sidebar-brand-text mx-3">BNI Corporate</div>
+                <div class="sidebar-brand-text mx-3">BNI Corporate University</div>
             </a>
 
             <!-- Divider -->
