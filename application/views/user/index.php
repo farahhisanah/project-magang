@@ -33,7 +33,6 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-				<img src="<?= base_url('assets/img/logo.png'); ?>" alt="" style="height: 30px;">
                 </div>
                 <div class="sidebar-brand-text mx-3">BNI Corporate </div>
             </a>
