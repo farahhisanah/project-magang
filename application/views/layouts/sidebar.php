@@ -37,7 +37,7 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
 			aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-fw fa-wrench"></i>
+			<i class="fas fa-code-branch"></i>
 			<span>Pengembangan Sistem 2023</span>
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
