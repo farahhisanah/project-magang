@@ -43,13 +43,11 @@
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
 			data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Unit Owner Program</h6>
-				<a class="collapse-item" href="utilities-color.html">MSI</a>
-				<a class="collapse-item" href="utilities-border.html">SOG</a>
-				<a class="collapse-item" href="utilities-animation.html">DEC</a>
-				<a class="collapse-item" href="utilities-other.html">LSG</a>
-				<a class="collapse-item" href="utilities-other.html">LCC</a>
-				<a class="collapse-item" href="utilities-other.html">LDG</a>
+				<h6 class="collapse-header">Jenis Pengembangan</h6>
+				<a class="collapse-item" href="">Assign by Pimkel</a>
+				<a class="collapse-item" href="">Enhancement</a>
+				<a class="collapse-item" href="">Fix Issue & Performance</a>
+				<a class="collapse-item" href="">New Initiation</a>
 			</div>
 		</div>
 	</li>
@@ -72,8 +70,8 @@
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Permintaan</h6>
-				<a class="collapse-item" href="buttons.html">Komplain</a>
-				<a class="collapse-item" href="cards.html">Report</a>
+				<a class="collapse-item" href="">Komplain</a>
+				<a class="collapse-item" href="">Report</a>
 			</div>
 		</div>
 	</li>
