@@ -68,7 +68,7 @@
 
 	<!-- Nav Item - Pages Collapse Menu -->
 	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+		<a class="nav-link collapsed" href="<?= base_url('komplain/index'); ?>" data-toggle="collapse" data-target="#collapseTwo"
 			aria-expanded="true" aria-controls="collapseTwo">
 			<i class="fas fa-fw fa-cog"></i>
 			<span>Handling Komplain & Report</span>
@@ -76,8 +76,8 @@
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Permintaan</h6>
-				<a class="collapse-item" href="">Komplain</a>
-				<a class="collapse-item" href="">Report</a>
+				<a class="collapse-item" href="<?= base_url('komplain/index'); ?>">Komplain</a>
+				<a class="collapse-item" href="<?= base_url('report/index'); ?>">Report</a>
 			</div>
 		</div>
 	</li>
