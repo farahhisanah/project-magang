@@ -49,10 +49,10 @@
                                             <th>Nama</th>
 											<th>Nama Aplikasi</th>
                                             <th>Kendala</th>
-											<th>Tanggal</th>
-                                            <th>Status</th>
-											<th></th>
-                                            <th></th>
+											<th>Tanggal Laporan</th>
+											<th>PIC Perbaikan MSI 2</th>
+											<th>Tanggal Selesai</th>
+											 <th>Status</th>
                                         </tr>
                                     </thead>
 									
