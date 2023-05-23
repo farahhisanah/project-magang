@@ -19,6 +19,7 @@ class Komplain extends CI_Controller {
 		$this->load->view('layouts/topbar', $data);
 		$this->load->view('komplain/index', $data);
 		$this->load->view('layouts/footer', $data);
+
 		
 	}
 }
