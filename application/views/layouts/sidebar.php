@@ -65,25 +65,7 @@
 	<!-- Divider -->
 	<hr class="sidebar-divider ">
 
-<<<<<<< HEAD
 	<?php endforeach; ?>
-=======
-	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item">
-		<a class="nav-link collapsed" href="<?= base_url('komplain/index'); ?>" data-toggle="collapse" data-target="#collapseTwo"
-			aria-expanded="true" aria-controls="collapseTwo">
-			<i class="fas fa-fw fa-cog"></i>
-			<span>Handling Komplain & Report</span>
-		</a>
-		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Permintaan</h6>
-				<a class="collapse-item" href="<?= base_url('komplain/index'); ?>">Komplain</a>
-				<a class="collapse-item" href="<?= base_url('report/index'); ?>">Report</a>
-			</div>
-		</div>
-	</li>
->>>>>>> d8651eca1156c2dec4c98220fc20577d9b657c92
 
 	</ul>
 	<!-- End of Sidebar -->
