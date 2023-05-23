@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<?php $this->load->view('layouts/header') ?>
-</head>
 
-<body id="page-top">
-	
-	<!-- Page Wrapper -->
-	<div id="wrapper">
+			<!-- Begin Page Content -->
+			<div class="container-fluid">
 
-	<?php $this->load->view('layouts/sidebar') ?>
+			<!-- Page Heading -->
+			<h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
-	<!-- Heading -->
-		
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-			<?php $this->load->view('layouts/topbar') ?>
-
-            </div>
-            <!-- End of Main Content -->
-		
-		<?php $this->load->view('layouts/footer') ?>
-
-</body>
-</html>
-		
+			<div class="card mb-5" style="width: 540px;">
+				<div class="row no gutters">
+					<img src="<?=base_url('assets/img/profile/') . $user['image']; ?>" class="card-img">
+				</div>		
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title"><?= $user['username']; ?> </h5>
+						<p class="card-text"> <?= $user['email']; ?></p>
+						<p class="card-text">
+							<small class="text-muted">User Since <?= date('d F Y', $user['date_created']);?>
+							</small>
+						</p>
+					</div>
+				</div>
+			</div>
 
 
 

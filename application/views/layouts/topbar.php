@@ -1,3 +1,9 @@
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -55,8 +61,9 @@
 		<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
 			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span class="mr-3 d-none d-lg-inline text-gray-600 large"><?= $user['username']; ?></span>
-			<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/profile.jpg">
+			<img class="img-profile rounded-circle" src="<?= base_url('assets/') ?>img/profile.png">
 		</a>
+
 		<!-- Dropdown - User Information -->
 		<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 			aria-labelledby="userDropdown">
@@ -70,6 +77,7 @@
 				Logout
 			</a>
 		</div>
+		
 	</li>
 
 </ul>

@@ -1,3 +1,7 @@
+<body id="page-top">
+	
+	<!-- Page Wrapper -->
+	<div id="wrapper">
 
  <!-- Sidebar -->
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -13,74 +17,55 @@
 	<!-- Divider -->
 	<hr class="sidebar-divider ">
 
+	<!-- QUERY MENU -->
+	<?php
+	$role_id = $this->session->userdata('role_id');
+	$queryMenu = "SELECT `user_menu`.`id`, `menu`
+					FROM `user_menu` JOIN `user_access`
+					ON `user_menu`.`id` = `user_access`.`menu_id`
+					WHERE `user_access`.`role_id` = $role_id
+					ORDER BY `user_access`.`menu_id` ASC
+					";
+		$menu = $this->db->query($queryMenu)->result_array();
+	?>
+
+	<!-- Looping Menu -->
+	<?php foreach ($menu as $m) : ?>
+
 	<!-- Heading -->
 	<div class="sidebar-heading">
-		Admin
+	<?= $m['menu']; ?>
 	</div>
 
-	<!-- Nav Item - Dashboard -->
-	<li class="nav-item">
-		<a class="nav-link" href="index.html">
-		<i class="fas fa-thin fa-newspaper"></i>
-			<span>Dashboard</span></a>
-	</li>
+	<!-- SIAPKAN SUB MENU -->
+	<?php 
+		$menuId = $m['id'];
+		$querysubMenu = "SELECT *
+						 FROM `user_submenu` JOIN `user_menu`
+						 ON `user_submenu`.`menu_id` = `user_menu`.`id`
+						 WHERE `user_submenu`.`menu_id` = $menuId
+						";
+		$subMenu = $this->db->query($querysubMenu)->result_array();
+	?>
+		<?php foreach ($subMenu AS $sm) : ?>
+
+			<?php if ($title == $sm['title']) :?>
+			<li class="nav-item active">
+			<?php else : ?>
+			<li class="nav-item">
+			<?php endif; ?>
+
+			<a class="nav-link" href="<?= base_url($sm['url']); ?>">
+				<i class="<?= $sm['icon']; ?>"></i>
+				<span><?= $sm['title']; ?></span></a>
+			</li>
+		
+		<?php endforeach; ?>
 
 	<!-- Divider -->
-	<hr class="sidebar-divider">
+	<hr class="sidebar-divider ">
 
-	<!-- Heading -->
-	<div class="sidebar-heading">
-		Pengembangan Sistem 2023
-	</div>
-
-	<!-- Nav Item - Dashboard -->
-	<li class="nav-item">
-		<a class="nav-link" href="<?= base_url('pengembangan/index'); ?>">
-		<i class="fas fa-code-branch"></i>
-			<span>Pengembangan Sistem 2023</span></a>
-	</li>
-
-	<!-- Nav Item - Utilities Collapse Menu -->
-	<li class="nav-item">
-		<a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
-			aria-expanded="true" aria-controls="collapseUtilities">
-			<i class=" fas fa-solid fa-list"></i>
-			<span>Jenis Pengembangan</span>
-		</a>
-		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-			data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="">Assign by Pimkel</a>
-				<a class="collapse-item" href="">Enhancement</a>
-				<a class="collapse-item" href="">Fix Issue & Performance</a>
-				<a class="collapse-item" href="">New Initiation</a>
-			</div>
-		</div>
-	</li>
-
-	<!-- Divider -->
-	<hr class="sidebar-divider">
-
-	<!-- Heading -->
-	<div class="sidebar-heading">
-		Komplain & Report
-	</div>
-
-	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-			aria-expanded="true" aria-controls="collapseTwo">
-			<i class="fas fa-fw fa-cog"></i>
-			<span>Handling Komplain & Report</span>
-		</a>
-		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Permintaan</h6>
-				<a class="collapse-item" href="">Komplain</a>
-				<a class="collapse-item" href="">Report</a>
-			</div>
-		</div>
-	</li>
+	<?php endforeach; ?>
 
 	</ul>
 	<!-- End of Sidebar -->

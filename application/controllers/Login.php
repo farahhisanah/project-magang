@@ -18,6 +18,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
@@ -46,10 +47,10 @@ class Login extends CI_Controller {
 					'role_id' => $user['role_id']
 				];
 				$this->session->set_userdata($data);
-				
-				if($user['role_id'] ==1){
+
+				if($user['role_id'] == 1){
 					redirect('admin');
-				}else {
+				} else {
 				redirect('user');
 				}
 
@@ -80,6 +81,7 @@ class Login extends CI_Controller {
 			$data = [
 				'username' => htmlspecialchars($this->input->post('username', true)),
 				'email' => htmlspecialchars($this->input->post('email', true)),
+				'image' => 'default.jpg',
 				'password' => password_hash($this->input->post('password1'),
 				PASSWORD_DEFAULT),
 				'role_id' => 2,
