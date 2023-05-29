@@ -2,8 +2,7 @@
 				<div class="container-fluid">
 					
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end card-header">
-						<a href="<?= base_url('pengembangan/create') ?>" class="btn btn-primary btn-sm float-right mr-2 "><i class="fas fa-plus"></i> Insert</a>
-                        <a href="print.php" target="_blank" class="btn btn-info btn-sm float-right mr-3"><i class="fas fa-print"></i> Print</a>
+						<a href="<?= base_url('pengembangan/insert') ?>" class="btn btn-primary btn-sm float-right mr-2 "><i class="fas fa-plus"></i> Insert</a>
 					</div>
 
                     <!-- DataTales Example -->
@@ -12,6 +11,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Pengembangan Sistem 2023</h6>
                         </div>
                         <div class="card-body">
+							<?= $this->session->flashdata('flash'); ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -22,25 +22,47 @@
                                         <th>Source Aplikasi</th>
                                     	<th>Unit Owner Program</th>
                                         <th>PIC Owner Program</th>
+										<th>No Notin</th>
+                                        <th>Tanggal Notin</th>
+										<th>No UR</th>
+										<th>Tanggal UR</th>
+                                        <th>Tanggal Terima Disposisi</th>
+                                    	<th>Skala Prioritas</th>
+                                    	<th>Short Deskripsi Program</th>
+                                        <th>PIC Programmer</th>
+										<th>Opsi</th>
                                         </tr>
-
-										<?php 
+                                    </thead>
+									<tbody>
+									<?php 
 										$no=1; 
-										foreach ($pengembangan as $row) { ?>
+										foreach ($pengembangan as $value) { ?>
 										<tr>
 										<td><?php echo $no++;?></td>
-										<td><?php echo $row->jenispeng;?></td>
-										<td><?php echo $row->perihal;?></td>
-										<td><?php echo $row->source;?></td>
-										<td><?php echo $row->unit;?></td>
-										<td><?php echo $row->pic;?></td>
+										<td><?php echo $value->jenispeng;?></td>
+										<td><?php echo $value->perihal;?></td>
+										<td><?php echo $value->source;?></td>
+										<td><?php echo $value->unit;?></td>
+										<td><?php echo $value->pic;?></td>
+										<td><?php echo $value->no_notin;?></td>
+										<td><?php echo $value->tgl_notin;?></td>
+										<td><?php echo $value->no_ur;?></td>
+										<td><?php echo $value->tgl_ur;?></td>
+										<td><?php echo $value->tgl_terima;?></td>
+										<td><?php echo $value->skala_prio;?></td>
+										<td><?php echo $value->short_deskripsi;?></td>
+										<td><?php echo $value->pic_programmer;?></td>
+										<td>
+											<a href="<?= base_url();?>pengembangan/update/<?= $value->id; ?>" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="<?= base_url();?>pengembangan/delete/<?= $value->id; ?>" onclick=" return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+										</td>
 										</tr>
 										<?php } ?>
-										
-                                    </thead>
+									</tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
 
                 </div>
+				<!-- /.container-fluid -->

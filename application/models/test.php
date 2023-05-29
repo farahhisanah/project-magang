@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pengembangan extends CI_Model {
+class Peng extends CI_Model {
  
 public function duatable() {
  $this->db->select('*');
