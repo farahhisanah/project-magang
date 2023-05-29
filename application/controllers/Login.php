@@ -64,7 +64,15 @@ class Login extends CI_Controller {
 		}
 	}
 
-	public function register()
+	public function logout()
+	{
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('role_id');
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> You have been logout! </div>');
+		redirect('login');
+	}
+
+	/*public function register()
 	{
 		$this->form_validation->set_rules('username', 'Username', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
@@ -92,13 +100,6 @@ class Login extends CI_Controller {
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Your account has been created. </div>');
 			redirect('login');
 		}
-	}
+	}*/
 
-	public function logout()
-	{
-		$this->session->unset_userdata('email');
-		$this->session->unset_userdata('role_id');
-		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> You have been logout! </div>');
-		redirect('login');
-	}
 }
