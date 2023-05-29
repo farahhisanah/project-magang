@@ -7,20 +7,20 @@
 				<div class="card-body">	
 					<form action="<?php base_url('pengembangan/insert'); ?>" method="post">
 						
-						<div class="mb-3">
+						<div class="form-group">
 							<label for="jenispeng" class="form-label"> Jenis Pengembangan </label>
-							<select class="form-control" name="jenispeng" aria-label="Default select example">
-										
+							<select class="form-control" id="jenispeng" name="jenispeng" aria-label="Default select example">
 										<option value="Assign By Pimkel">Assign By Pimkel</option>
 										<option value="Enchancement">Enchancement</option>
-										<option value="Fix Issue">Fix Issue</option>
+										<option value="Fix Issue">Fix Issue & Performance</option>
 										<option value="New Initiation">New Initiation</option>
 							</select>
 						</div>
 
 						<div class="mb-3">
 							<label for="perihal" class="form-label"> Perihal </label>
-							<input type="text" name="perihal" class="form-control" id="perihal">
+							<input type="text" name="perihal"class="form-control" id="perihal">
+							<small class="form-text text-danger"><?=form_error('perihal'); ?></small>
 						</div>
 							
 						<div class="mb-3">

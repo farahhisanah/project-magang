@@ -39,7 +39,7 @@ class Pengembangan extends CI_Controller {
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 
-		$this->form_validation->set_rules('jenispeng', 'Jenis Pengembangan', 'required');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'required');
 
 		if( $this->form_validation->run() == FALSE ){
 			$this->load->view('layouts/header', $data);
@@ -68,10 +68,12 @@ class Pengembangan extends CI_Controller {
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 		$data['pengembangan'] = $this->Pengem_model->getbyId($id);
+		$data['jenispeng'] = ['Assign By Pimkel','Enchancement','Fix Issue & Performance','New Initiation'];
+		$data['skala_prio'] = ['Low','Medium','High'];
 		
-		$this->form_validation->set_rules('jenispeng', 'Jenis Pengembangan', 'required');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'required');
 
-		if( $this->form_validation->run() == FALSE ){
+		if( $this->form_validation->run() == false ){
 			$this->load->view('layouts/header', $data);
 			$this->load->view('layouts/sidebar', $data);
 			$this->load->view('layouts/topbar', $data);
@@ -83,11 +85,5 @@ class Pengembangan extends CI_Controller {
 			redirect('pengembangan');
 		}
 	}
-
-	public function ubahData()
-    {
-        $this->Pengem_model->updatePengembangan();
-        redirect('pengembangan');
-    }
 
 }

@@ -7,7 +7,7 @@ class Pengem_model extends CI_Model {
 	public function getAll()
     {
         $this->db->from($this->table);
-        $this->db->order_by("id", "desc");
+        $this->db->order_by("id", "asc");
         $query = $this->db->get();
         return $query->result();
         //fungsi diatas seperti halnya query 
@@ -58,7 +58,8 @@ class Pengem_model extends CI_Model {
 			"pic_programmer"=>$this->input->post('pic_programmer', true)
 		];
 		
-		return $this->db->update($this->table, $data, array('id' => $this->input->post('id')));
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('pengembangan', $data);
 
 	}
 
