@@ -47,7 +47,12 @@
 
 						<div class="mb-3">
 							<label for="no_notin" class="form-label"> Nomor Notin</label>
-							<input type="text" class="form-control" id="no_notin" value="<?= $pengembangan['no_notin']; ?>"name="no_notin">
+							<input type="text" class="form-control" id="no_notin" value="<?= $pengembangan['no_notin']; ?>" name="no_notin">
+						</div>
+
+						<div class="mb-3">
+							<label for="file_notin" class="form-label"> File Notin</label>
+							<input type="file" class="form-control" id="file_notin" value="<?= $pengembangan['file_notin']; ?>" name="file_notin">
 						</div>
 
 						<div class="mb-3">
@@ -57,7 +62,12 @@
 
 						<div class="mb-3">
 							<label for="no_ur" class="form-label"> Nomor UR </label>
-							<input type="text" class="form-control" id="no_ur" value="<?= $pengembangan['no_ur']; ?>"name="no_ur">
+							<input type="text" class="form-control" id="no_ur" value="<?= $pengembangan['no_ur']; ?>" name="no_ur">
+						</div>
+
+						<div class="mb-3">
+							<label for="file_ur" class="form-label"> File UR</label>
+							<input type="file" class="form-control" id="file_ur" name="file_ur" value="<?= $pengembangan['file_ur']; ?>">
 						</div>
 
 						<div class="mb-3">

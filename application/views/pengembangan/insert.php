@@ -5,7 +5,7 @@
 			<div class="card">
 				<div class="card-header"> Insert Pengembangan Sistem </div>
 				<div class="card-body">	
-					<form action="<?php base_url('pengembangan/insert'); ?>" method="post">
+					<form action="<?php echo base_url('pengembangan/submit_insert') ?>" method="post" enctype="multipart/form-data">
 						
 						<div class="form-group">
 							<label for="jenispeng" class="form-label"> Jenis Pengembangan </label>
@@ -48,6 +48,11 @@
 						</div>
 
 						<div class="mb-3">
+							<label for="file_notin" class="form-label"> File Notin</label>
+							<input type="file" class="form-control" id="file_notin" name="file_notin">
+						</div>
+
+						<div class="mb-3">
 							<label for="tgl_notin" class="form-label"> Tanggal Notin </label>
 							<input type="date" class="form-control" id="tgl_notin" name="tgl_notin">
 						</div>
@@ -55,6 +60,11 @@
 						<div class="mb-3">
 							<label for="no_ur" class="form-label"> Nomor UR </label>
 							<input type="text" class="form-control" id="no_ur" name="no_ur">
+						</div>
+
+						<div class="mb-3">
+							<label for="file_ur" class="form-label"> File UR</label>
+							<input type="file" class="form-control" id="file_ur" name="file_ur">
 						</div>
 
 						<div class="mb-3">

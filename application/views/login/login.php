@@ -22,8 +22,17 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<style type="text/css">
+    .bg-login{
+        background-image: url(<?php echo base_url("assets/img/bg.jpg");?>);
+		background-repeat:no-repeat;
+		
+		background-size: cover;
+      
+    }
+</style>
 
+<body class="bg-login">
     <div class="container">
 
          <!-- Outer Row -->
@@ -57,7 +66,7 @@
                                                 id="password" name="password" placeholder="Password">
 												<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?> 
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-user btn-block" style="background-color:teal;color:white">
                                             Login
 										</button>
                                     </form>

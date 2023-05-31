@@ -14,24 +14,8 @@ class Pengem_model extends CI_Model {
         //select * from mahasiswa order by IdMhsw desc
     }
 
-	public function insertPengembangan()
+	public function insertPengembangan($data)
 	{
-		$data = [
-			"jenispeng"=>$this->input->post('jenispeng', true),
-			"perihal"=>$this->input->post('perihal', true),
-			"source"=>$this->input->post('source', true),
-			"unit"=>$this->input->post('unit', true),
-			"pic"=>$this->input->post('pic', true),
-			"no_notin"=>$this->input->post('no_notin', true),
-			"tgl_notin"=>$this->input->post('tgl_notin', true),
-			"no_ur"=>$this->input->post('no_ur', true),
-			"tgl_ur"=>$this->input->post('tgl_ur', true),
-			"tgl_terima"=>$this->input->post('tgl_terima', true),
-			"skala_prio"=>$this->input->post('skala_prio', true),
-			"short_deskripsi"=>$this->input->post('short_deskripsi', true),
-			"pic_programmer"=>$this->input->post('pic_programmer', true)
-		];
-
 		$this->db->insert('pengembangan', $data);
 	}
 
@@ -49,8 +33,10 @@ class Pengem_model extends CI_Model {
 			"unit"=>$this->input->post('unit', true),
 			"pic"=>$this->input->post('pic', true),
 			"no_notin"=>$this->input->post('no_notin', true),
+			"file_notin"=>$this->input->post('file_notin', true),
 			"tgl_notin"=>$this->input->post('tgl_notin', true),
 			"no_ur"=>$this->input->post('no_ur', true),
+			"file_ur"=>$this->input->post('file_ur', true),
 			"tgl_ur"=>$this->input->post('tgl_ur', true),
 			"tgl_terima"=>$this->input->post('tgl_terima', true),
 			"skala_prio"=>$this->input->post('skala_prio', true),

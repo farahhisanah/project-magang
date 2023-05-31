@@ -23,8 +23,10 @@
                                     	<th>Unit Owner Program</th>
                                         <th>PIC Owner Program</th>
 										<th>No Notin</th>
+										<th>File Notin</th>
                                         <th>Tanggal Notin</th>
 										<th>No UR</th>
+										<th>File UR</th>
 										<th>Tanggal UR</th>
                                         <th>Tanggal Terima Disposisi</th>
                                     	<th>Skala Prioritas</th>
@@ -45,8 +47,10 @@
 										<td><?php echo $value->unit;?></td>
 										<td><?php echo $value->pic;?></td>
 										<td><?php echo $value->no_notin;?></td>
+										<td><img width="100 " src="<?php echo base_url(); ?>uploads/<?php echo $value->file_notin; ?>"> </td>
 										<td><?php echo $value->tgl_notin;?></td>
 										<td><?php echo $value->no_ur;?></td>
+										<td><img width="100 " src="<?php echo base_url(); ?>uploads/<?php echo $value->file_ur; ?>"> </td>
 										<td><?php echo $value->tgl_ur;?></td>
 										<td><?php echo $value->tgl_terima;?></td>
 										<td><?php echo $value->skala_prio;?></td>
