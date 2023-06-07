@@ -5,7 +5,7 @@
 			<div class="card">
 				<div class="card-header"><?= $title; ?>Report</div>
 				<div class="card-body">	
-					<form action="<?php base_url('report/submit_update/' . $id); ?>" method="post" enctype="multipart/form-data">
+					<form action="<?php echo base_url('report/submit_update/' . $id); ?>" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="id" value="<?= $report['id']; ?>">
 						
 						<div class="form-group">

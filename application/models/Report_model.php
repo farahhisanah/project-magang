@@ -24,10 +24,9 @@ class Report_model extends CI_Model {
 		return $this->db->delete($this->table, ['id' => $id]);
 	}
 
-	public function updateReport($data)
+	public function updateReport($data, $id)
 	{
-		
-		$this->db->where('id', $this->input->post('id'));
+		$this->db->where('id', $id);
 		$this->db->update('report', $data);
 
 	}

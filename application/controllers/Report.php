@@ -141,6 +141,24 @@ class Report extends CI_Controller {
 
 	public function submit_update($id){
 
+		// echo 'test';
+		// exit;
+
+		$data = [
+			"nama_report"=>$this->input->post('nama_report', true),
+			"npp"=>$this->input->post('npp', true),
+			"nama"=>$this->input->post('nama', true),
+			"unit"=>$this->input->post('unit', true),
+			"via"=>$this->input->post('via', true),
+			"nomor_email"=>$this->input->post('nomor_email', true),
+			"tgl_permintaan"=>$this->input->post('tgl_permintaan', true),
+			// "capture"=>$capture_name,
+			"pic"=>$this->input->post('pic', true),
+			// "query"=>$query_name,
+			"tgl_diberikan"=>$this->input->post('tgl_diberikan', true),
+			"status"=>$this->input->post('status', true)
+		];
+
 		if(isset($_FILES['capture'])) {
 			// $data['capture'] = $upload[;file]
 			// $file_name = $strin_filename;
@@ -155,8 +173,7 @@ class Report extends CI_Controller {
 			if ($this->upload->do_upload('capture')) {
 				$capture = $this->upload->data();
 				$capture_name = $capture['file_name'];
-				$data['capture'] = $upload ['file'];
-				$capture_name = $string_capture;
+				$data['capture'] = $capture_name;
 			}
 		}
 
@@ -171,47 +188,39 @@ class Report extends CI_Controller {
 	
 				$this->load->library('upload', $config);
 	
-				if ($this->upload->do_upload('capture')) {
-					$capture = $this->upload->data();
-					$capture_name = $capture['file_name'];
-					$data['query'] = $upload ['file'];
-					$query_name = $string_query;
-				
+				if ($this->upload->do_upload('query')) {
+					$upload_query = $this->upload->data();
+					$file_query_name = $upload_query['file_name'];
+					$data['query'] = $file_query_name;
 				}
 		}
 
-		$data['title'] = 'Form Update Report';
-		$data['user'] = $this->db->get_where('user', ['email' =>
-						$this->session->userdata('email')])->row_array();
+		// print_r('<pre>');
+		// print_r($data);
+		// die;
 
-		$this->form_validation->set_rules('nama_report', 'nama_report', 'required');
-
-		if( $this->form_validation->run() == FALSE ){
-			$this->load->view('layouts/header', $data);
-			$this->load->view('layouts/sidebar', $data);
-			$this->load->view('layouts/topbar', $data);
-			$this->load->view('report/update', $data);
-			$this->load->view('layouts/footer', $data);
-		}else{
-			$data = [
-				"nama_report"=>$this->input->post('nama_report', true),
-				"npp"=>$this->input->post('npp', true),
-				"nama"=>$this->input->post('nama', true),
-				"unit"=>$this->input->post('unit', true),
-				"via"=>$this->input->post('via', true),
-				"nomor_email"=>$this->input->post('nomor_email', true),
-				"tgl_permintaan"=>$this->input->post('tgl_permintaan', true),
-				// "capture"=>$capture_name,
-				"pic"=>$this->input->post('pic', true),
-				// "query"=>$query_name,
-				"tgl_diberikan"=>$this->input->post('tgl_diberikan', true),
-				"status"=>$this->input->post('status', true)
-			];
-		
-		$this->Report_model->updateReport($data);
+		$this->Report_model->updateReport($data, $id);
 		$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert"> Update Success</div>');
 		redirect('report');
-		}
+
+		// $data['title'] = 'Form Update Report';
+		// $data['user'] = $this->db->get_where('user', ['email' =>
+		// 				$this->session->userdata('email')])->row_array();
+
+		// $this->form_validation->set_rules('nama_report', 'nama_report', 'required');
+
+		// if( $this->form_validation->run() == FALSE ){
+		// 	$this->load->view('layouts/header', $data);
+		// 	$this->load->view('layouts/sidebar', $data);
+		// 	$this->load->view('layouts/topbar', $data);
+		// 	$this->load->view('report/update', $data);
+		// 	$this->load->view('layouts/footer', $data);
+		// }else{
+			
+		
+		// $this->Report_model->updateReport($data);
+		
+		// }
 	}
 
 	
