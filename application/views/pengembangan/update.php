@@ -5,12 +5,13 @@
 			<div class="card">
 				<div class="card-header"><?= $title; ?></div>
 				<div class="card-body">	
-					<form action="<?php base_url('pengembangan/update'); ?>" method="post">
+				<form action="<?php echo base_url('pengembangan/submit_update/' . $id); ?>" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="id" value="<?= $pengembangan['id']; ?>">
 						
 						<div class="form-group">
 							<label for="jenispeng" class="form-label"> Jenis Pengembangan </label>
 							<select class="form-control" name="jenispeng" value="<?= $pengembangan['jenispeng']; ?>" aria-label="Default select example">
+							<option value="Jenis Pengembangan" disabled selected>Jenis Pengembangan</option>
 									<?php foreach( $jenispeng as $j) : ?>
 										<?php if( $j == $pengembangan['jenispeng']) :?>
 											<option value="<?= $j; ?>" selected><?= $j;?> </option>
@@ -28,7 +29,7 @@
 							
 						<div class="mb-3">
 							<label for="source" class="form-label"> Source Aplikasi</label>
-							<select class="form-control" name="source" value="<?= $pengembangan['source']; ?>"aria-label="Default select example">
+							<select class="form-control" name="source" value="<?= $pengembangan['source']; ?>" aria-label="Default select example">
 										<option value="Smarter">Smarter</option>
 										<option value="m-BNISmarter">m-BNISmarter</option>
 										<option value="DigiHC">DigiHC</option>
@@ -100,7 +101,12 @@
 
 						<div class="mb-3">
 							<label for="pic_programmer" class="form-label"> PIC Programmer</label>
-							<input type="text" class="form-control" id="pic_programmer" value="<?= $pengembangan['pic_programmer']; ?>" name="pic_programmer">
+							<select class="form-control" name="pic_programmer" aria-label="Default select example" value="<?= $pengembangan['pic_programmer']; ?>">
+										<option value="Ade">Ade</option>
+										<option value="Safri">Safri</option>
+										<option value="Cece">Cece</option>
+										<option value="Febri">Febri</option>
+							</select>
 						</div>
 
 						<div class="mb-3">

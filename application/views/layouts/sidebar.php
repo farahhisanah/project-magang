@@ -47,6 +47,7 @@
 										";
 						$subMenu = $this->db->query($querysubMenu)->result_array();
 					?>
+
 					<?php foreach ($subMenu AS $sm) : ?>
 
 						<?php if ($title == $sm['title']) :?>
@@ -65,8 +66,57 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider ">
 
-				<?php endforeach; ?>	
+				<?php endforeach; ?>
+
+				<!-- Heading -->
+				<div class="sidebar-heading">
+				 	Pengembangan Sistem 2023
+            	</div>
+			
+				<!-- Nav Item - Utilities Collapse Menu -->
+				<li class="nav-item">
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+						aria-expanded="true" aria-controls="collapseUtilities">
+						<i class="fas fa-fw fa-code-branch"></i>
+						<span>Pengembangan Sistem 2023</span>
+                	</a>
+						<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+							data-parent="#accordionSidebar">
+							<div class="bg-white py-2 collapse-inner rounded">
+								<a class="collapse-item" href="<?= base_url('pengembangan/index') ?>">Pengembangan</a>
+								<a class="collapse-item" href="<?= base_url('perumusan/index') ?>">Perumusan</a>
+								<a class="collapse-item" href="<?= base_url('develop/index') ?>">Development</a>
+								<a class="collapse-item" href="<?= base_url('internal/index') ?>">UAT Internal</a>
+								<a class="collapse-item" href="<?= base_url('uat/index') ?>">UAT User</a>
+								<a class="collapse-item" href="<?= base_url('finals/index') ?>">Final</a>
+							</div>
+						</div>
+					</li>
+				
+				<!-- Divider -->
+				<hr class="sidebar-divider ">
+
+					<!-- Heading -->
+					<div class="sidebar-heading">
+						Handling Komplain & Report
+					</div>
+				
+					<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('komplain/index') ?>">
+						<i class="fas fa-fw fa-solid fa-bullhorn"></i>
+						<span>Handling Komplain</span>
+					</a>
+					</li>
+
+					<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('report/index') ?>">
+						<i class="fas fa-fw fa-solid fa-bug"></i>
+						<span>Report</span>
+					</a>
+					</li>
 
 			</ul>
 			<!-- End of Sidebar -->
+
+			
 

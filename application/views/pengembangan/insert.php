@@ -10,6 +10,7 @@
 						<div class="form-group">
 							<label for="jenispeng" class="form-label"> Jenis Pengembangan </label>
 							<select class="form-control" id="jenispeng" name="jenispeng" aria-label="Default select example">
+										<option value="Jenis Pengembangan" disabled selected>Jenis Pengembangan</option>
 										<option value="Assign By Pimkel">Assign By Pimkel</option>
 										<option value="Enchancement">Enchancement</option>
 										<option value="Fix Issue">Fix Issue & Performance</option>
@@ -80,6 +81,7 @@
 						<div class="mb-3">
 							<label for="skala_prio" class="form-label"> Skala Prioritas</label>
 							<select class="form-control" name="skala_prio" aria-label="Default select example">
+							<option value="Skala Prioritas" disabled selected>Skala Prioritas</option>
 										<option value="Low">Low</option>
 										<option value="Medium">Medium</option>
 										<option value="High">High</option>
@@ -93,7 +95,13 @@
 
 						<div class="mb-3">
 							<label for="pic_programmer" class="form-label"> PIC Programmer</label>
-							<input type="text" class="form-control" id="pic_programmer" name="pic_programmer">
+							<select class="form-control" name="pic_programmer" aria-label="Default select example">
+							<option value="PIC Programmer" disabled selected>PIC Programmer</option>
+										<option value="Ade">Ade</option>
+										<option value="Safri">Safri</option>
+										<option value="Cece">Cece</option>
+										<option value="Febri">Febri</option>
+							</select>
 						</div>
 
 						<div class="mb-3">
