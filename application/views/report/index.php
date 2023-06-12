@@ -18,7 +18,7 @@
                                         <tr>
                                         <th>No</th>
                                         <th>Nama Report</th>
-										<th>NPP</th>
+										<th>NPP</th>	
                                         <th>Nama</th>
                                     	<th>Unit</th>
                                         <th>Permintaan Via</th>
@@ -45,7 +45,7 @@
 										<td><?php echo $value->via;?></td>
 										<td><?php echo $value->nomor_email;?></td>
 										<td><?php echo $value->tgl_permintaan;?></td>
-										<td><img width="100 " src="<?php echo base_url(); ?>uploads/<?php echo $value->capture; ?>"> </td>
+										<td align = "center"><img width="100 " src="<?php echo base_url(); ?>uploads/<?php echo $value->capture; ?>"> </td>
 										<td><?php echo $value->pic;?></td>
 										<td align="center">
 											<?php if(!empty($value->query)) { ?>
@@ -61,6 +61,7 @@
 										<td><?php echo $value->tgl_diberikan;?></td>
 										<td><?php echo $value->status;?></td>
 										<td>
+											<!-- <a href="<?= base_url();?>report/view/<?= $value->id; ?>" class="btn btn-info"><i class="fas fa-eye"></i> View</a> -->
 											<a href="<?= base_url();?>report/update/<?= $value->id; ?>" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
                                             <a href="<?= base_url();?>report/delete/<?= $value->id; ?>" onclick=" return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
 										</td>

@@ -139,6 +139,8 @@ class Report extends CI_Controller {
 		redirect('report');
 	}
 
+
+
 	public function submit_update($id){
 
 		// echo 'test';
